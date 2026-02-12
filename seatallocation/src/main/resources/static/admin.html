@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard - Smart Exam Seating Allocation System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <main class="container py-4">
+    <nav class="page-nav">
+      <div class="hero-badge">Admin</div>
+      <div class="d-flex gap-2">
+        <a class="nav-link-pill" href="student.html">Student Seat Lookup</a>
+        <a class="nav-link-pill" href="allocation.html">Seating Allocation</a>
+        <button id="logoutBtn" class="btn btn-outline-secondary">Logout</button>
+      </div>
+    </nav>
+
+    <header class="hero-card mb-4">
+      <div>
+        <h1 class="display-6 fw-bold">Admin Seating Dashboard</h1>
+        <p class="lead mb-0">Manage students, halls, and allocate seating.</p>
+      </div>
+      <div class="hero-badge">Control Center</div>
+    </header>
+
+    <div id="adminStatus" class="status-text mb-3"></div>
+
+    <section class="row g-4">
+      <div class="col-lg-4">
+        <div class="card glass-card">
+          <div class="card-body">
+            <h5 class="card-title">Add Student</h5>
+            <div class="mb-2">
+              <label class="form-label">Roll No</label>
+              <input id="studentRoll" class="form-control" />
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Name</label>
+              <input id="studentName" class="form-control" />
+            </div>
+            <div class="mb-2">
+              <label class="form-label">Department</label>
+              <input id="studentDept" class="form-control" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Subject</label>
+              <input id="studentSubject" class="form-control" />
+            </div>
+            <button id="addStudentBtn" class="btn btn-outline-primary w-100">Add Student</button>
+          </div>
+        </div>
+
+        <div class="card glass-card mt-4">
+          <div class="card-body">
+            <h5 class="card-title">Add Exam Hall</h5>
+            <div class="mb-2">
+              <label class="form-label">Hall Number</label>
+              <input id="hallNumber" class="form-control" placeholder="H1" />
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Capacity</label>
+              <input id="hallCapacity" type="number" class="form-control" />
+            </div>
+            <button id="addHallBtn" class="btn btn-outline-primary w-100">Add Hall</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="card glass-card mb-4">
+          <div class="card-body d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+            <div>
+              <h5 class="card-title mb-1">Seating Allocation</h5>
+              <p class="mb-0 text-muted">Allocate students to seats by hall capacity and department alternation.</p>
+            </div>
+            <div class="d-flex gap-2">
+              <button id="allocateBtn" class="btn btn-success">Allocate Seating</button>
+              <button id="viewSeatingBtn" class="btn btn-outline-secondary">View Seating</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass-card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Students</h5>
+            <div class="table-responsive">
+              <table class="table table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Subject</th>
+                  </tr>
+                </thead>
+                <tbody id="studentsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass-card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Exam Halls</h5>
+            <div class="table-responsive">
+              <table class="table table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th>Hall Number</th>
+                    <th>Capacity</th>
+                  </tr>
+                </thead>
+                <tbody id="hallsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card glass-card">
+          <div class="card-body">
+            <h5 class="card-title">Next Step</h5>
+            <p class="text-muted mb-3">After allocation, move to the seating allocation page.</p>
+            <a class="btn btn-outline-secondary" href="allocation.html">Open Seating Allocation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>

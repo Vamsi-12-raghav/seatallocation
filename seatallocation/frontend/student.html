@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Seat Lookup - Smart Exam Seating Allocation System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <main class="container py-5">
+    <nav class="page-nav">
+      <div class="hero-badge">Student</div>
+      <div class="d-flex gap-2">
+        <a class="nav-link-pill" href="index.html">Admin Login</a>
+        <a class="nav-link-pill" href="invigilator.html">Invigilator View</a>
+      </div>
+    </nav>
+
+    <header class="hero-card mb-4">
+      <div>
+        <h1 class="display-6 fw-bold">Seat Allocation Lookup</h1>
+        <p class="lead mb-0">Enter your roll number to find your exam seat.</p>
+      </div>
+      <div class="hero-badge">Lookup</div>
+    </header>
+
+    <section class="row g-4">
+      <div class="col-lg-5">
+        <div class="card glass-card">
+          <div class="card-body">
+            <h5 class="card-title">Find My Seat</h5>
+            <div class="mb-3">
+              <label class="form-label">Roll Number</label>
+              <input id="lookupRoll" class="form-control" placeholder="e.g. 101" />
+            </div>
+            <button id="lookupBtn" class="btn btn-primary w-100">Check Allocation</button>
+            <div id="lookupStatus" class="status-text mt-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="card glass-card">
+          <div class="card-body">
+            <h5 class="card-title">Allocation Result</h5>
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle">
+                <thead>
+                  <tr>
+                    <th>Hall Number</th>
+                    <th>Seat Number</th>
+                    <th>Roll Number</th>
+                    <th>Department</th>
+                  </tr>
+                </thead>
+                <tbody id="lookupTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="student.js"></script>
+</body>
+</html>
