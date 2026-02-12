@@ -1,4 +1,6 @@
-const baseUrl = "https://classified-trackbacks-mel-facts.trycloudflare.com";
+const baseUrl = (window.APP_CONFIG && window.APP_CONFIG.baseUrl)
+  ? window.APP_CONFIG.baseUrl
+  : "";
 
 const allocationTable = document.getElementById("allocationTable");
 const printBtn = document.getElementById("printBtn");

@@ -1,4 +1,6 @@
-const baseUrl = "https://classified-trackbacks-mel-facts.trycloudflare.com";
+const baseUrl = (window.APP_CONFIG && window.APP_CONFIG.baseUrl)
+  ? window.APP_CONFIG.baseUrl
+  : "";
 
 const lookupBtn = document.getElementById("lookupBtn");
 const lookupStatus = document.getElementById("lookupStatus");
