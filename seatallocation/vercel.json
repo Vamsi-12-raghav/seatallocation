@@ -1,0 +1,7 @@
+{
+  "buildCommand": "npm run build 2>/dev/null || true",
+  "outputDirectory": "src/main/resources/static",
+  "env": {
+    "API_URL": "https://seatallocation.onrender.com"
+  }
+}

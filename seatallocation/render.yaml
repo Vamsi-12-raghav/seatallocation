@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: seatallocation
+    env: java
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: bash start.sh
+    healthCheckPath: /
+    envVars:
+      - key: JAVA_VERSION
+        value: 17
