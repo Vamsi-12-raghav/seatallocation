@@ -1,10 +1,13 @@
 // API Configuration
 const API_CONFIG = {
   baseUrl: window.location.origin,
-  // Backend deployed on Render
+  // Use environment variable or fallback to Render backend
   get apiBaseUrl() {
-    // Use environment variable or fallback to Render backend
-    return process.env.REACT_APP_API_URL || 'https://seatallocation.onrender.com';
+    // For now, update this to your Render backend URL after backend is deployed
+    const defaultBackend = 'https://seatallocation.onrender.com';
+    return typeof process !== 'undefined' && process.env.REACT_APP_API_URL 
+      ? process.env.REACT_APP_API_URL 
+      : defaultBackend;
   }
 };
 
