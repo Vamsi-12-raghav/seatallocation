@@ -1,11 +1,10 @@
 FROM maven:3.9.0-eclipse-temurin-17 AS builder
 WORKDIR /app
-COPY seatallocation/pom.xml ./pom.xml
-COPY seatallocation/src ./src
-COPY seatallocation/.mvn ./.mvn
-COPY seatallocation/mvnw ./mvnw
-COPY seatallocation/mvnw.cmd ./mvnw.cmd
-RUN mvn clean package -DskipTests
+COPY pom.xml ./pom.xml
+COPY src ./src
+COPY .mvn ./.mvn
+COPY mvnw ./mvnw
+RUN chmod +x ./mvnw && ./mvnw clean package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
