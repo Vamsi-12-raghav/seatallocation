@@ -1,0 +1,13 @@
+{
+  "buildCommand": "echo 'Static frontend'",
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/"
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "@seatallocation_backend_url"
+  }
+}

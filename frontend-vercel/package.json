@@ -1,0 +1,13 @@
+{
+  "name": "seat-allocation-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Smart Exam Seating Allocation System",
+  "main": "index.html",
+  "scripts": {
+    "build": "echo 'Frontend is static HTML/CSS/JS'",
+    "start": "echo 'Serve with: python -m http.server 3000'"
+  },
+  "keywords": ["seating", "allocation", "exam"],
+  "author": "Vamsi",
+  "license": "MIT"
+}

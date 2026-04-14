@@ -1,4 +1,7 @@
 {
+  "note": "This project uses Java/Spring Boot which is NOT supported by Vercel",
+  "note2": "Use Render for backend deployment or separate frontend/backend",
+  "recommendation": "See ../DEPLOYMENT.md for detailed instructions",
   "buildCommand": "npm run build 2>/dev/null || true",
   "outputDirectory": "src/main/resources/static",
   "env": {

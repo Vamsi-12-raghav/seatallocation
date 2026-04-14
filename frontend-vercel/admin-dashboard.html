@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Management Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .admin-header {
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
+        }
+        .admin-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .admin-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        .admin-cards-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            padding: 0 20px 50px;
+        }
+        .admin-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 40px 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .admin-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+        .admin-card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .admin-card h3 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        .admin-card p {
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .admin-card-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+        .admin-card-btn:hover {
+            opacity: 0.9;
+            color: white;
+            text-decoration: none;
+        }
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .footer-text {
+            text-align: center;
+            color: white;
+            opacity: 0.8;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .admin-header h1 {
+                font-size: 1.8rem;
+            }
+            .admin-cards-section {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back to Main Application</a>
+    
+    <div class="admin-header">
+        <h1>Admin Management System</h1>
+        <p>Manage admin credentials, registrations, and access control</p>
+    </div>
+
+    <div class="admin-cards-section">
+        <!-- Register New Admin Card -->
+        <div class="admin-card">
+            <div class="admin-card-icon">📝</div>
+            <h3>Register New Admin</h3>
+            <p>Create a new admin account with unique credentials. New admins will receive their login information immediately after registration.</p>
+            <a href="admin-register.html" class="admin-card-btn">Go to Registration</a>
+        </div>
+
+        <!-- Access Credentials Card -->
+        <div class="admin-card">
+            <div class="admin-card-icon">🔑</div>
+            <h3>Access Credentials</h3>
+            <p>Retrieve admin login credentials by searching with username, email, or view all active admins. Includes copy-to-clipboard functionality.</p>
+            <a href="admin-credentials.html" class="admin-card-btn">View Credentials</a>
+        </div>
+
+        <!-- Admin Manual Card -->
+        <div class="admin-card">
+            <div class="admin-card-icon">📚</div>
+            <h3>Documentation</h3>
+            <p>Access comprehensive guides including system setup, API documentation, and troubleshooting. Start here if you need help.</p>
+            <button class="admin-card-btn" onclick="downloadDocumentation()">Download Docs</button>
+        </div>
+    </div>
+
+    <div class="footer-text">
+        <p>Admin Management System v1.0 | Secured and Password Protected</p>
+        <p style="opacity: 0.6; font-size: 0.85rem;">⚠️ Keep your credentials confidential and secure</p>
+    </div>
+
+    <script>
+        function downloadDocumentation() {
+            const docs = [
+                { name: 'ADMIN_SYSTEM_README.md', description: 'Complete system documentation' },
+                { name: 'ADMIN_API_REFERENCE.md', description: 'API reference and examples' }
+            ];
+            
+            alert('Documentation files:\n\n' + docs.map(d => `${d.name}\n${d.description}`).join('\n\n') + 
+                  '\n\nCheck the project root directory for these files.');
+        }
+    </script>
+</body>
+</html>
